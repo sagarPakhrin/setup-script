@@ -36,7 +36,7 @@ GenericName=Text Editor
 
 Exec=sublime
 Terminal=false
-Icon=/opt/sublime_text_3/Icon/128x128/sublime_text.png
+Icon=/opt/sublime_text_3/Icon/128x128/sublime-text.png
 Type=Application
 Categories=TextEditor;IDE;Development
 X-Ayatana-Desktop-Shortcuts=NewWindow
