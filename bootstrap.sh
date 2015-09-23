@@ -23,39 +23,18 @@ sudo dpkg -i *dropbox_*.deb
 dropbox start -i
 
 
-# sublime text
-read -p "Install Sublime Text"
-wget http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3083_x64.tar.bz2
-tar vxjf sublime_text_3_build_3083_x64.tar.bz2
-sudo mv sublime_text_3 /opt/
-sudo ln -s /opt/sublime_text_3/sublime_text /usr/bin/sublime
-echo '[Desktop Entry]
-Version=1.0
-Name=Sublime Text
-GenericName=Text Editor
-
-Exec=sublime
-Terminal=false
-Icon=/opt/sublime_text_3/Icon/128x128/sublime-text.png
-Type=Application
-Categories=TextEditor;IDE;Development
-X-Ayatana-Desktop-Shortcuts=NewWindow
-
-[NewWindow Shortcut Group]
-Name=New Window
-Exec=sublime -n
-TargetEnvironment=Cinnamon' | sudo tee -a /usr/share/applications/sublime.desktop
-sudo sed -i "s/gedit.desktop/sublime.desktop/g" /usr/share/applications/defaults.list
-
-
-# sublime text package control
-read -p "Install Sublime Text Package Control"
-wget -P ~/.config/sublime-text-3/Installed\ Packages https://sublime.wbond.net/Package%20Control.sublime-package
-
-
 # git
 read -p "Install git"
 sudo apt-get install git
+sudo apt-get install -f
+
+# atom
+read -p "Install Atom"
+wget https://atom.io/download/deb -O atom.deb
+sudo dpkg -i atom.deb
+
+# atom package sync
+apm install package-sync
 
 
 # vim and tmux
@@ -108,13 +87,17 @@ echo "source /usr/local/share/chruby/chruby.sh" >> ~/.localrc
 echo "chruby 2.1.5" >> ~/.localrc
 
 
-# webdev / rails
-read -p "Install webdev dependencies"
+# databases
+read -p "Install databases"
 sudo apt-get install postgresql postgresql-server-dev-all postgresql-client
 sudo apt-get install mysql-client mysql-server libmysqld-dev
 sudo apt-get install libsqlite3-dev
+sudo apt-get install redis-server redis-tools
+
+
+# node
+read -p "Install Node"
 sudo apt-get install nodejs-dev
-should be able to run gem install rails now
 
 
 # Heroku
