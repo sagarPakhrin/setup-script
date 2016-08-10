@@ -69,22 +69,20 @@ sudo apt-get install ipython
 
 # ruby
 read -p "Install ruby"
-sudo apt-get install ruby
-
 wget -O chruby-0.3.9.tar.gz https://github.com/postmodern/chruby/archive/v0.3.9.tar.gz
 tar -xzvf chruby-0.3.9.tar.gz
 cd chruby-0.3.9
 sudo make install
 
-wget -O ruby-install-0.5.0.tar.gz https://github.com/postmodern/ruby-install/archive/v0.5.0.tar.gz
-tar -xzvf ruby-install-0.5.0.tar.gz
-cd ruby-install-0.5.0/
+wget -O ruby-install-0.6.0.tar.gz https://github.com/postmodern/ruby-install/archive/v0.6.0.tar.gz
+tar -xzvf ruby-install-0.6.0.tar.gz
+cd ruby-install-0.6.0/
 sudo make install
 
-sudo ruby-install ruby 2.1.5
+sudo ruby-install ruby 2.3.1
 
 echo "source /usr/local/share/chruby/chruby.sh" >> ~/.localrc
-echo "chruby 2.1.5" >> ~/.localrc
+echo "chruby 2.3.1" >> ~/.localrc
 
 
 # databases
