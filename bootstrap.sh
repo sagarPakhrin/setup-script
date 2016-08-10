@@ -88,7 +88,6 @@ echo "chruby 2.3.1" >> ~/.localrc
 # databases
 read -p "Install databases"
 sudo apt-get install postgresql postgresql-server-dev-all postgresql-client
-sudo apt-get install mysql-client mysql-server libmysqld-dev
 sudo apt-get install libsqlite3-dev
 sudo apt-get install redis-server redis-tools
 
