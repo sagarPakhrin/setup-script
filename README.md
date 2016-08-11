@@ -25,6 +25,8 @@ Steps
 8. Open Cinnamon settings and:
   * set the theme (window: gnome-cupertino, icons: numix circle, controls: mint x aqua)
 
-9. Login to chrome and login to all the things.
+9. Setup shortcuts in the start menu
 
-10. Install keeweb
+10. Login to chrome and login to all the things.
+
+11. [Install keeweb](https://github.com/keeweb/keeweb/releases)
