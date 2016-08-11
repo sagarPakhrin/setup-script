@@ -19,6 +19,7 @@ Steps
 6. Mount the old linux install and copy over some directories. I typically move:
   * `.themes`
   * `.ssh`
+  * `Downloads`
 
 7. [Install numix-icon-theme-circle](http://me4oslav.deviantart.com/art/Numix-Circle-Linux-Desktop-Icon-Theme-414741466)
   
@@ -33,5 +34,5 @@ Steps
 
 12. re-add remote for dotfiles repo to be ssh
 
-13. [Gnome terminal colors](https://github.com/pricco/gnome-terminal-colors-monokai) 
+13. [Gnome terminal colors](https://github.com/pricco/gnome-terminal-colors-monokai). Also hide the menu bar by default (this setting is not on the profile but the root settings)
 
