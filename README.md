@@ -31,4 +31,7 @@ Steps
 
 11. [Install keeweb](https://github.com/keeweb/keeweb/releases)
 
-12. re-add remote for dotfiles repo to be ssh 
+12. re-add remote for dotfiles repo to be ssh
+
+13. [Gnome terminal colors](https://github.com/pricco/gnome-terminal-colors-monokai) 
+
