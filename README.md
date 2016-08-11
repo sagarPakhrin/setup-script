@@ -30,3 +30,5 @@ Steps
 10. Login to chrome and login to all the things.
 
 11. [Install keeweb](https://github.com/keeweb/keeweb/releases)
+
+12. re-add remote for dotfiles repo to be ssh 
