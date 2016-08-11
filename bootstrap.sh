@@ -94,8 +94,7 @@ sudo apt-get install redis-server redis-tools
 
 # node
 read -p "Install Node"
-sudo add-apt-repository ppa:chris-lea/node.js
-sudo apt-get update
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install nodejs
 
 # Heroku
