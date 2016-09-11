@@ -36,3 +36,4 @@ Upgrading my Desktop
 
 13. [Gnome terminal colors](https://github.com/pricco/gnome-terminal-colors-monokai). Also hide the menu bar by default (this setting is not on the profile but the root settings)
 
+14. Turn off recent file history (its under privacy on Mint 18)
