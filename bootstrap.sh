@@ -44,7 +44,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo "Click Themes then choose:"
     echo "  Window borders: Gnome-Cupertino"
     echo "  Icons:          Numix-Circle"
-    echo "  Controls:       Gnome-Cupertino"
+    echo "  Controls:       Mint-X-Aqua"
     echo "  Desktop:        Mint-Y-Dark"
     cinnamon-settings
 fi
