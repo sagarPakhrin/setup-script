@@ -172,8 +172,6 @@ fi
 
 
 # ToDo
-read -p "Change the default shell to zsh. The only way I've found to do this is to edit the termial profile using the menu and choosing run a custom command instead of my shell and setting it to zsh. Also hide the window borders. Press enter when finished."
-
 read -p "Copy over my ssh keys. Press enter when finished."
 
 read -p "Turn off recent file history (its under privacy on Mint 18). Press enter when finished."
