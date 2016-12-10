@@ -172,7 +172,7 @@ fi
 
 
 # ToDo
-read -p "Copy over my ssh keys. Press enter when finished."
+read -p "Copy over my ssh and gpg keys. Press enter when finished."
 
 read -p "Turn off recent file history (its under privacy on Mint 18). Press enter when finished."
 
