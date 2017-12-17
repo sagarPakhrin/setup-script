@@ -1,7 +1,7 @@
 setup-script
 ============
 
-This is the script I run after a fresh linux install on my desktop.
+This is the script I run after a fresh linux install.
 
 Upgrading my Desktop
 --------------------
