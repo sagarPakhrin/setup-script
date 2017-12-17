@@ -120,12 +120,6 @@ read -p "Install c++ dev tools (Y/y)" -n 1 -r
 fi
 
 
-# python
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-read -p "Install python packages (Y/y)" -n 1 -r
-    sudo apt-get install ipython python-pip python-numpy python-matplotlib
-fi
-
 # ruby
 read -p "Install ruby (Y/y)" -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -139,10 +133,10 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     cd ruby-install-0.6.0/
     sudo make install
 
-    sudo ruby-install ruby 2.3.1
+    sudo ruby-install ruby 2.4.3
 
     echo "source /usr/local/share/chruby/chruby.sh" >> ~/.localrc
-    echo "chruby 2.3.1" >> ~/.localrc
+    echo "chruby 2.4.3" >> ~/.localrc
 fi
 
 
@@ -150,7 +144,6 @@ fi
 read -p "Install databases (Y/y)" -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo apt-get install postgresql postgresql-server-dev-all postgresql-client
-    sudo apt-get install mongodb mongodb-server
     sudo apt-get install libsqlite3-dev
     sudo apt-get install redis-server redis-tools
 fi
