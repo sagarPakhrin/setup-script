@@ -16,7 +16,6 @@ fi
 read -p "Install git (Y/y)" -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo apt-get install git
-    #sudo apt-get install -f
 fi
 
 
@@ -25,7 +24,7 @@ read -p "Setup Desktop theme (Y/y)" -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     # gnome cupertino
     # this hangs for some reason. ctrl-c fixed it and things kept moving
-    wget https://dl.opendesktop.org/api/files/download/id/1461782792/147061-Gnome-Cupertino-2.1.5.tar.gz&type=gtk3_themes&filename=147061-Gnome-Cupertino-2.1.5.tar.gz
+    wget https://dl.opendesktop.org/api/files/downloadfile/id/1461782792/s/ee6f58dd300b0121a00e3cc7b437136f/t/1513484799/147061-Gnome-Cupertino-2.1.5.tar.gz
     mkdir ~/.themes > /dev/null
     tar xvzf 147061-Gnome-Cupertino-2.1.5.tar.gz -C ~/.themes
 
@@ -44,7 +43,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo "Click Themes then choose:"
     echo "  Window borders: Gnome-Cupertino"
     echo "  Icons:          Numix-Circle"
-    echo "  Controls:       Mint-X-Aqua"
+    echo "  Controls:       Mint-X-Purple"
     echo "  Desktop:        Mint-Y-Dark"
     cinnamon-settings
 fi
@@ -55,11 +54,11 @@ read -p "Install Google Chrome (Y/y)" -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     if sudo dpkg -i google-chrome*.deb; then
-     echo 'Done'
+      echo 'Done'
     else
-     sudo apt-get install -f
-     sudo dpkg -i google-chrome*.deb
-     echo 'Done'
+      sudo apt-get install -f
+      sudo dpkg -i google-chrome*.deb
+      echo 'Done'
     fi
 fi
 
@@ -68,15 +67,21 @@ fi
 read -p "Install Dropbox (Y/y)" -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     wget https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb
-    sudo dpkg -i *dropbox_*.deb
-    dropbox start -i
+    if sudo dpkg -i *dropbox_*.deb; then
+      dropbox start -i
+      echo 'Done'
+    else
+      sudo apt-get install -f
+      sudo dpkg -i *dropbox_*.deb;
+      echo 'Done'
+    fi
 fi
 
 
 # keeWeb
 read -p "Install KeeWeb (Y/y)" -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-    wget https://github.com/keeweb/keeweb/releases/download/v1.3.3/KeeWeb-1.3.3.linux.x64.deb
+    wget https://github.com/keeweb/keeweb/releases/download/v1.6.3/KeeWeb-1.6.3.linux.x64.deb
     sudo dpkg -i KeeWeb*.deb
 fi
 
