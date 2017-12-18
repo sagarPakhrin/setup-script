@@ -146,6 +146,13 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 
+# python
+read -p "Install python (Y/y)" -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    sudo apt-get install python3-pip
+fi
+
+
 # databases
 read -p "Install databases (Y/y)" -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
