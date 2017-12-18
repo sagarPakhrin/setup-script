@@ -150,6 +150,7 @@ fi
 read -p "Install python (Y/y)" -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo apt-get install python3-pip
+    pip3 install --upgrade pip
 fi
 
 
