@@ -5,10 +5,11 @@ sudo -v
 
 
 # shell
-read -p "install zsh and shell (Y/y)" -n 1 -r
+read -p "install zsh and utils (Y/y)" -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo apt-get install zsh
     sudo apt-get install curl
+    sudo apt-get install gpgv2
 fi
 
 
