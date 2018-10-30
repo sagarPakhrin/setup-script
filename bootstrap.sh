@@ -5,27 +5,26 @@ sudo -v
 
 
 # shell
-read -p "install zsh and utils (Y/y)" -n 1 -r
+read -p "install zsh, curl (Y/y)" -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo apt-get install zsh
     sudo apt-get install curl
-    sudo apt-get install gpgv2
 fi
 
 
 # git
-read -p "Install git (Y/y)" -n 1 -r
+read -p "Install git and gpgv2 (Y/y)" -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo apt-get install git
+    sudo apt-get install gpgv2
 fi
 
 
-# desktop theme
-read -p "Setup Desktop theme (Y/y)" -n 1 -r
+# desktop
+read -p "Setup Desktop (Y/y)" -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     # gnome cupertino
-    # this hangs for some reason. ctrl-c fixed it and things kept moving
-    wget https://dl.opendesktop.org/api/files/downloadfile/id/1461782792/s/ee6f58dd300b0121a00e3cc7b437136f/t/1513484799/147061-Gnome-Cupertino-2.1.5.tar.gz
+    wget https://dl.opendesktop.org/api/files/download/id/1461782792/s/b5f056237fc011855fbe6401e3255ac8/t/1540657396/u/147061-Gnome-Cupertino-2.1.5.tar.gz
     mkdir ~/.themes > /dev/null
     tar xvzf 147061-Gnome-Cupertino-2.1.5.tar.gz -C ~/.themes
 
@@ -33,6 +32,11 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo apt-add-repository ppa:numix/ppa
     sudo apt-get update
     sudo apt-get install numix-icon-theme-circle
+
+    # albert
+    sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.04/ /' > /etc/apt/sources.list.d/home:manuelschneid3r.list"
+    sudo apt-get update
+    sudo apt-get install albert
 
     # terminal colors
     git clone git://github.com/pricco/gnome-terminal-colors-monokai.git
@@ -82,6 +86,7 @@ fi
 # keeWeb
 read -p "Install KeeWeb (Y/y)" -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
+    sudo apt-get install libgconf2-4
     wget https://github.com/keeweb/keeweb/releases/download/v1.6.3/KeeWeb-1.6.3.linux.x64.deb
     sudo dpkg -i KeeWeb*.deb
 fi
@@ -119,10 +124,10 @@ fi
 
 
 # c++
-if [[ $REPLY =~ ^[Yy]$ ]]; then
 read -p "Install c++ dev tools (Y/y)" -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo apt-get install build-essential
-    sudo apt-get install cmake cmake-gui
+    sudo apt-get install cmake cmake-qt-gui
 fi
 
 
@@ -139,10 +144,10 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     cd ruby-install-0.6.0/
     sudo make install
 
-    sudo ruby-install ruby 2.4.3
+    sudo ruby-install ruby 2.5.3
 
     echo "source /usr/local/share/chruby/chruby.sh" >> ~/.localrc
-    echo "chruby 2.4.3" >> ~/.localrc
+    echo "chruby 2.5.3" >> ~/.localrc
 fi
 
 
@@ -150,7 +155,6 @@ fi
 read -p "Install python (Y/y)" -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo apt-get install python3-pip
-    pip3 install --upgrade pip
     sudo pip3 install setuptools
 fi
 
@@ -167,7 +171,7 @@ fi
 # node
 read -p "Install Node (Y/y)" -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-    curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+    curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
     sudo apt-get install nodejs
 fi
 
