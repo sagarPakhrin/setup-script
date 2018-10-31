@@ -39,11 +39,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo apt-get install albert
 
     # terminal colors
-    git clone git://github.com/pricco/gnome-terminal-colors-monokai.git
-    cd gnome-terminal-colors-monokai
     sudo apt-get install dconf-cli
-    ./install.sh
-    cd ~
+    wget -O gogh https://git.io/vQgMr && chmod +x gogh && ./gogh && rm gogh
 
     echo "Click Themes then choose:"
     echo "  Window borders: Gnome-Cupertino"
