@@ -65,21 +65,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 
-# dropbox
-read -p "Install Dropbox (Y/y)" -n 1 -r
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    wget https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb
-    if sudo dpkg -i *dropbox_*.deb; then
-      dropbox start -i
-      echo 'Done'
-    else
-      sudo apt-get install -f
-      sudo dpkg -i *dropbox_*.deb;
-      echo 'Done'
-    fi
-fi
-
-
 # keeWeb
 read -p "Install KeeWeb (Y/y)" -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
