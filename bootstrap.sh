@@ -168,7 +168,7 @@ fi
 # node
 read -p "Install Node (Y/y)" -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-    curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
+    curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
     sudo apt-get install nodejs
 fi
 
